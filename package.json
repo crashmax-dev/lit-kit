@@ -1,8 +1,20 @@
 {
   "name": "lit-kit",
   "version": "1.0.0",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/lit-kit.umd.js",
+  "module": "./dist/lit-kit.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/lit-kit.es.js",
+      "require": "./dist/lit-kit.umd.js"
+    }
+  },
   "scripts": {
-    "build": "tsc",
+    "dev": "vite",
+    "build": "vite build",
     "prebuild": "rimraf dist",
     "storybook": "start-storybook -p 9000",
     "build-storybook": "build-storybook",
@@ -10,6 +22,7 @@
   },
   "homepage": "https://crashmax-dev.github.io/lit-kit/",
   "devDependencies": {
+    "@babel/core": "^7.15.8",
     "@storybook/addon-actions": "^6.3.10",
     "@storybook/addon-controls": "^6.3.10",
     "@storybook/addon-docs": "^6.3.10",
@@ -17,8 +30,12 @@
     "@storybook/addon-links": "^6.3.10",
     "@storybook/html": "^6.3.10",
     "@storybook/web-components": "^6.3.10",
+    "babel-loader": "^8.2.2",
     "gh-pages": "^3.2.3",
-    "rimraf": "^3.0.2"
+    "rimraf": "^3.0.2",
+    "storybook-builder-vite": "^0.1.0",
+    "ts-lit-plugin": "^1.2.1",
+    "vite": "^2.6.5"
   },
   "dependencies": {
     "lit": "^2.0.2"

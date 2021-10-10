@@ -1,12 +1,15 @@
 module.exports = {
   stories: [
-    '../stories/**/*.stories.mdx',
-    '../stories/**/*.stories.@(js|ts)'
+    '../src/**/*.stories.mdx',
+    '../src/**/*.stories.@(js|jsx|ts|tsx)'
   ],
   addons: [
     '@storybook/addon-docs',
     '@storybook/addon-links',
     '@storybook/addon-controls',
     '@storybook/addon-essentials'
-  ]
+  ],
+  core: {
+    builder: 'storybook-builder-vite'
+  }
 }

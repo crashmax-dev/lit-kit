@@ -2,14 +2,12 @@ import { html } from 'lit'
 import { Meta, Story } from '@storybook/web-components'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
-// ???
-import type { Button } from '../../src'
-import '../../src/components/button'
+import type { Button } from './button'
+import './button'
 
 export default {
   title: 'Components/Button',
-  // Need to set the tag to make addon-docs works properly with CustomElementsManifest
-  component: 'marsbase-button',
+  component: 'lit-button',
   argTypes: {
     onClick: {
       action: 'onClick'
@@ -19,14 +17,14 @@ export default {
     actions: {
       handles: [
         'click',
-        'marsbase-button:click'
+        'lit-button:click'
       ]
     }
   }
 } as Meta
 
 const Template: Story<Button> = ({ greeting }) =>
-  html`<marsbase-button greeting="${ifDefined(greeting)}"></marsbase-button>`
+  html`<lit-button greeting="${ifDefined(greeting)}"></lit-button>`
 
 export const MarsBase: Story<Button> = Template.bind({})
 MarsBase.args = {
