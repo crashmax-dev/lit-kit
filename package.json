@@ -6,8 +6,7 @@
     "prebuild": "rimraf dist",
     "storybook": "start-storybook -p 9000",
     "build-storybook": "build-storybook",
-    "predeploy": "npm run build-storybook",
-    "deploy-storybook": "gh-pages -d storybook-static"
+    "deploy-storybook": "npm run build-storybook && gh-pages -d storybook-static"
   },
   "homepage": "https://crashmax-dev.github.io/lit-kit/",
   "devDependencies": {
