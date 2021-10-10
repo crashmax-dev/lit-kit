@@ -1,0 +1,27 @@
+{
+  "name": "lit-kit",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "tsc",
+    "prebuild": "rimraf dist",
+    "storybook": "start-storybook -p 9000",
+    "build-storybook": "build-storybook",
+    "predeploy": "npm run build-storybook",
+    "deploy-storybook": "gh-pages -d storybook-static"
+  },
+  "homepage": "https://crashmax-dev.github.io/lit-kit/",
+  "devDependencies": {
+    "@storybook/addon-actions": "^6.3.10",
+    "@storybook/addon-controls": "^6.3.10",
+    "@storybook/addon-docs": "^6.3.10",
+    "@storybook/addon-essentials": "^6.3.10",
+    "@storybook/addon-links": "^6.3.10",
+    "@storybook/html": "^6.3.10",
+    "@storybook/web-components": "^6.3.10",
+    "gh-pages": "^3.2.3",
+    "rimraf": "^3.0.2"
+  },
+  "dependencies": {
+    "lit": "^2.0.2"
+  }
+}
