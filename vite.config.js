@@ -1,11 +1,12 @@
 import path from 'path'
 import { defineConfig } from 'vite'
+import dts from 'vite-plugin-dts'
 
 export default defineConfig({
   build: {
     lib: {
       entry: path.resolve(__dirname, 'src/index.ts'),
-      name: 'ComponentLibrary'
+      name: 'lit-kit'
     },
     rollupOptions: {
       external: [
@@ -17,5 +18,14 @@ export default defineConfig({
         }
       }
     }
-  }
+  },
+  plugins: [
+    dts({
+      outputDir: 'dist',
+      include: ['src'],
+      staticImport: true,
+      logDiagnostics: true,
+      insertTypesEntry: true
+    })
+  ]
 })

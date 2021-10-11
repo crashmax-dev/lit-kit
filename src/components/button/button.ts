@@ -1,17 +1,29 @@
-import { html } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
-
+import { LitElement, html } from 'lit'
+import { customElement } from 'lit/decorators.js'
+import theme from '../../styles/theme'
 import styles from './button.styles'
-import { Component } from '../../util/components'
 
 @customElement('lit-button')
-export class Button extends Component {
+export class Button extends LitElement {
   static get styles() {
-    return [super.styles, styles]
+    return [theme, styles]
   }
 
-  @property({ type: String, reflect: true }) greeting = ''
-  @property({ type: String, reflect: true }) planet = 'World'
+  static get properties() {
+    return {
+      greeting: {
+        type: String,
+        reflect: true
+      },
+      planet: {
+        type: String,
+        reflect: true
+      }
+    }
+  }
+
+  greeting = ''
+  planet = 'World'
 
   togglePlanet() {
     this.planet = this.planet === 'World' ? 'Mars' : 'World'

@@ -6,10 +6,8 @@ module.exports = {
   addons: [
     '@storybook/addon-docs',
     '@storybook/addon-links',
+    '@storybook/addon-postcss',
     '@storybook/addon-controls',
     '@storybook/addon-essentials'
-  ],
-  core: {
-    builder: 'storybook-builder-vite'
-  }
+  ]
 }
